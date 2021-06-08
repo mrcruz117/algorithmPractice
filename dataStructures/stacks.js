@@ -1,36 +1,36 @@
-//stack functions: psuh, pop, peek(first element), length/size
+// stack functions: psuh, pop, peek(first element), length/size
 
-//arrays have all those functions natively.
-var letters = [];
-var word = 'racecar';
-var rword = '';
+// arrays have all those functions natively.
+const letters = [];
+const word = 'racecar';
+let rword = '';
 
-//put the letters into a stack
+// put the letters into a stack
 for (let i = 0; i < word.length; i++) {
   letters.push(word[i]);
 }
 
-//pop off stack in reverse order to concatinate it to the word.
+// pop off stack in reverse order to concatinate it to the word.
 for (let i = 0; i < word.length; i++) {
   rword += letters.pop();
 }
 
 if (rword === word) {
-  console.log(`${word} is a palindrome.`)
+  console.log(`${word} is a palindrome.`);
 } else {
-  console.log(`${word} is NOT a palindrome.`)
+  console.log(`${word}   is NOT a palindrome.`);
 }
 
-//stack class
+// stack class
 const Stack = () => {
   this.count = 0;
   this.storage = {};
 
-  //adds value to the end of stack
+  // adds value to the end of stack
   this.push = (value) => {
     this.storage[this.count] = value;
-    this.count++;
-  }
+    this.count += 1;
+  };
 
   // removes and returns value at end of stack.
   this.pop = () => {
@@ -41,16 +41,16 @@ const Stack = () => {
     var result = this.storage[this.count];
     delete this.storage[this.count];
     return result;
-  }
+  };
 
   this.size = () => {
     return this.count;
-  }
+  };
 
   this.peek = (value) => {
     return this.storage[this.count - 1];
-  }
-}
+  };
+};
 
 var myStack = new Stack();
 
