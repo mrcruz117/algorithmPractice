@@ -6,12 +6,12 @@ const word = 'racecar';
 let rword = '';
 
 // put the letters into a stack
-for (let i = 0; i < word.length; i++) {
+for (let i = 0; i < word.length; i += 1) {
   letters.push(word[i]);
 }
 
 // pop off stack in reverse order to concatinate it to the word.
-for (let i = 0; i < word.length; i++) {
+for (let i = 0; i < word.length; i += 1) {
   rword += letters.pop();
 }
 
@@ -34,25 +34,22 @@ const Stack = () => {
 
   // removes and returns value at end of stack.
   this.pop = () => {
+    const result = this.storage[this.count];
+
     if (this.count === 0) {
       return undefined;
     }
-    this.count--;
-    var result = this.storage[this.count];
+    this.count -= 1;
     delete this.storage[this.count];
     return result;
   };
 
-  this.size = () => {
-    return this.count;
-  };
+  this.size = () => this.count;
 
-  this.peek = (value) => {
-    return this.storage[this.count - 1];
-  };
+  this.peek = () => this.storage[this.count - 1];
 };
 
-var myStack = new Stack();
+const myStack = new Stack();
 
 myStack.push(1);
 myStack.push(2);
