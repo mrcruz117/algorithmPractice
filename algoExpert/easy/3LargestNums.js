@@ -1,6 +1,6 @@
 function findThreeLargestNumbers(array) {
   const largestNums = [null, null, null];
-  largestNums.sort((a, b) => return a - b);
+  largestNums.sort((a, b) => a - b);
   for (const num of array) {
     if (num > largestNums[2] || largestNums[2] === null) {
       if (largestNums[2]) {
