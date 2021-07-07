@@ -12,9 +12,9 @@ var spiralTraversal = function (matrix) {
     }
     //console.log(matrix[matrix.length - 1])
     while (matrix[matrix.length - 1].length !== 0) {
-      matrix[matrix.length - 1].pop()
+      matrix[matrix.length - 1].pop();
     }
-    matrix.pop()
+    matrix.pop();
     for (var k = matrix.length - 1; k > 0; k--) {
       result.push(matrix[k].shift());
     }
